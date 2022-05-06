@@ -302,6 +302,19 @@
     }
   }
 
+
+.left_door {width: 50%;
+float:left;
+display: block;}
+
+.right_door {width: 50%;
+float:right;
+display: block;}
+
+.garage_img {
+  width: 100%;
+}
+
 </style>
 
 <!-- Toolbar -->
@@ -331,7 +344,7 @@
 <div class="content" role="main">
 
   <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+  <div class="card highlight-card card-large">
 
     <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
       <title>Rocket Ship</title>
@@ -351,29 +364,67 @@
 
     <span>{{ title }} app is running!</span>
 
-    <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632"
-      viewBox="0 0 516.119 1083.632">
-      <title>Rocket Ship Smoke</title>
-      <path id="Path_40" data-name="Path 40"
-        d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z"
-        transform="translate(-147.025 -140.939)" fill="#f5f5f5" />
-    </svg>
+
 
   </div>
 
+<div class="container">
+  <div class="row">
+    <div class="left_door">
+      <div  >
+        Garage Door 1
+        <hr>
+        <div *ngIf="garage1; else garage1IsOpen">
+          <img src="assets/images/garageDoorClosed.png" alt="" class="garage_img">
+        </div>
+        <ng-template #garage1IsOpen>
+          <div>
+            <img src="assets/images/garageDoorOpen.png" alt="" class="garage_img">
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="left_door">
+      <div>
+        Garage Door 2
+        <hr>
+        <div *ngIf="garage2; else garage2IsOpen">
+          <img src="assets/images/garageDoorClosed.png" alt="" class="garage_img">
+        </div>
+        <ng-template #garage2IsOpen>
+          <div>
+            <img src="assets/images/garageDoorOpen.png" alt="" class="garage_img">
 
-  <div>
-    Garage 1
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
   </div>
-  <div>
-    Garage 1
-  </div>
+</div>
+
   <hr>
-  <div>
-    <button>Garage Door 1</button></div>
-  <div>
-    <button>Garage Door 1</button></div>
+  <hr>
 
+
+  <!-- <div>
+    <button (click)="garage1=!garage1">Garage Remote Button 1</button></div>
+  <div>
+    <button (click)="garage2=!garage2">Garage Remote Button 2</button></div>
+  <hr> -->
+  <!-- <h3>Current customer: {{ currentCustomer }}</h3>
+  <input type="text" [(ngModel)]="currentCustomer" placeholder="foo" />
+  <input type="checkbox" [(ngModel)]="garage1" />
+  <input type="checkbox" [(ngModel)]="garage2" /> -->
+
+
+  <nav>
+    <a class="button top" href="" (click)="notProgrammed()"><i class="icon-play" ></i></a>
+    <a class="button right" href="" (click)="garage2=!garage2"><i class="icon-forward"></i></a>
+    <a class="button left" href="" (click)="garage1=!garage1"><i class="icon-backward"></i></a>
+    <a class="button bottom" href="" (click)="notProgrammed()"><i class="icon-pause"></i></a>
+    <a class="center-button" href="" (click)="notProgrammed()"><i class="icon-stop"></i></a>
+  </nav>
 
 
 
