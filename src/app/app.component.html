@@ -375,10 +375,12 @@ display: block;}
         Garage Door 1
         <hr>
         <div *ngIf="garage1; else garage1IsOpen">
+          CLOSED  {{garage1}}
           <img src="assets/images/garageDoorClosed.png" alt="" class="garage_img">
         </div>
         <ng-template #garage1IsOpen>
           <div>
+            OPEN {{garage1}}
             <img src="assets/images/garageDoorOpen.png" alt="" class="garage_img">
           </div>
         </ng-template>
@@ -389,10 +391,12 @@ display: block;}
         Garage Door 2
         <hr>
         <div *ngIf="garage2; else garage2IsOpen">
+          CLOSED  {{garage2}}
           <img src="assets/images/garageDoorClosed.png" alt="" class="garage_img">
         </div>
         <ng-template #garage2IsOpen>
           <div>
+            OPEN  {{garage2}}
             <img src="assets/images/garageDoorOpen.png" alt="" class="garage_img">
 
           </div>
@@ -403,11 +407,11 @@ display: block;}
   </div>
 </div>
 
-  <hr>
+  <!-- <hr>
   <hr>
 
 
-  <!-- <div>
+  <div>
     <button (click)="garage1=!garage1">Garage Remote Button 1</button></div>
   <div>
     <button (click)="garage2=!garage2">Garage Remote Button 2</button></div>
@@ -419,11 +423,11 @@ display: block;}
 
 
   <nav>
-    <a class="button top" href="" (click)="notProgrammed()"><i class="icon-play" ></i></a>
-    <a class="button right" href="" (click)="garage2=!garage2"><i class="icon-forward"></i></a>
-    <a class="button left" href="" (click)="garage1=!garage1"><i class="icon-backward"></i></a>
-    <a class="button bottom" href="" (click)="notProgrammed()"><i class="icon-pause"></i></a>
-    <a class="center-button" href="" (click)="notProgrammed()"><i class="icon-stop"></i></a>
+    <a class="button top"   (click)="notProgrammed()"><i class="icon-play" ></i></a>
+    <a class="button right"  (click)="OpenClose(2)"><i class="icon-forward"></i></a>
+    <a class="button left"  (click)="OpenClose(1)"><i class="icon-backward"></i></a>
+    <a class="button bottom" (click)="notProgrammed()"><i class="icon-pause"></i></a>
+    <a class="center-button"   (click)="notProgrammed()"><i class="icon-stop"></i></a>
   </nav>
 
 

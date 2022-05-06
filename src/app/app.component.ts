@@ -16,4 +16,13 @@ export class AppComponent {
   notProgrammed () {
     alert('This button is not programmed yet');
   }
+
+  OpenClose (door: number) {
+    if (door===1){
+      this.garage1 = !this.garage1;
+    }
+    if (door===2){
+      this.garage2 = !this.garage2;
+    }
+  }
 }
