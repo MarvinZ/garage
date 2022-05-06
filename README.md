@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
 
+## for the project
+
+git clone https://github.com/MarvinZ/garage.git
+cd garage
+npm install
+npm start
+Go to http://localhost:4200/ on your browser
+
+
+## for the other question
+ I created this project to work locally
+https://github.com/MarvinZ/TelTest
+
+Please contact me if there are questions, comments or concerns on my answers.
+
+Thank you!
+
+*******************************************************************************************
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
